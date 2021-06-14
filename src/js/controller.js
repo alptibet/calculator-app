@@ -3,7 +3,7 @@ import * as viewTheme from './Views/viewTheme';
 
 const controlThemeSelect = function (theme) {
   model.themeSelect(theme);
-  viewTheme.renderTheme();
+  // viewTheme.renderTheme();
 };
 
 const init = function () {
