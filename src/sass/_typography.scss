@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+
+body {
+  font-family: 'Spartan', sans-serif;
+  font-size: 3.2rem;
+  &.theme1 {
+    color: $theme1-gentext;
+  }
+
+  &.theme2 {
+    color: $theme2-gentext;
+  }
+
+  &.theme2 {
+    color: $theme3-gentext;
+  }
+}

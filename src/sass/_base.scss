@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  &.theme1 {
+    background-color: $theme1-main-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-main-background;
+  }
+
+  &.theme2 {
+    background-color: $theme3-main-background;
+  }
+}
+
+.container {
+  width: 60rem;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  // grid-template-rows: repeat(3, mincontent);
+}

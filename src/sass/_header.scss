@@ -1,0 +1,54 @@
+.logo {
+  grid-column: 1/4;
+  align-self: end;
+}
+
+.theme-selector {
+  align-self: end;
+  grid-column: 4/5;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  & p {
+    text-transform: uppercase;
+    font-size: 1rem;
+    align-self: end;
+    justify-self: center;
+  }
+
+  &__no {
+    margin-bottom: 2px;
+
+    & p {
+      margin-left: 8px;
+    }
+
+    & p span:not(:last-child) {
+      display: inline-block;
+      margin-right: 12px;
+    }
+  }
+
+  &__switch {
+    align-self: end;
+    width: 80%;
+    height: 2.2rem;
+    background-color: $theme1-keypad-background;
+    border: none;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+
+    &-btn {
+      height: 1.4rem;
+      width: 1.4rem;
+      background-color: $theme1-equal-background;
+      border: none;
+      border-radius: 50%;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      cursor: pointer;
+    }
+  }
+}
