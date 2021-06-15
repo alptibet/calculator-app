@@ -12,13 +12,21 @@ html {
 }
 
 body {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 144rem;
+  height: 100vh;
+  position: relative;
   @include body-background;
 }
 
 .container {
-  width: 60rem;
-  margin: 5rem auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+  width: 55rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  // grid-template-rows: repeat(3, mincontent);
 }
