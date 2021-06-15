@@ -42,9 +42,10 @@
     font-size: 1.4rem;
     width: 5.8rem;
     position: relative;
-    background: $theme1-keypad-background;
     border-radius: 10px;
     height: 2rem;
+
+    @include screen-background;
 
     &-label {
       position: absolute;
@@ -84,7 +85,7 @@
     }
 
     & input:checked ~ .slide-bg {
-      background: $theme1-equal-background;
+      @include equal-background;
     }
 
     & input:nth-child(1):checked ~ .slide-bg {

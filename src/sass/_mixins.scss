@@ -1,0 +1,41 @@
+@mixin body-background {
+  &.theme1 {
+    background-color: $theme1-main-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-main-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-main-background;
+  }
+}
+
+@mixin screen-background {
+  &.theme1 {
+    background-color: $theme1-screen-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-screen-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-screen-background;
+  }
+}
+
+@mixin equal-background {
+  &.theme1 {
+    background-color: $theme1-equal-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-equal-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-equal-background;
+  }
+}
