@@ -5,7 +5,3 @@ export const addHandlerThemeSelect = function (handler) {
     handler(e.target.dataset.theme);
   });
 };
-
-// export const renderTheme = function () {
-//   //
-// };
