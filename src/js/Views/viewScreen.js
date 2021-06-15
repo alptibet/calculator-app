@@ -10,4 +10,11 @@ export const addHandlerUpdateScreen = function (handler) {
     ],
     { duration: 1000, iterations: Infinity }
   );
+
+  const numpad = document.querySelector('.numpad');
+  numpad.addEventListener('click', function (e) {
+    const { target } = e;
+    if (!e.target.classList.contains('operand')) return;
+    console.log(target.textContent);
+  });
 };
