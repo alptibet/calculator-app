@@ -1,12 +1,15 @@
 const state = {
   firstOperand: null,
   secondOperand: null,
+  displayValue: 0,
   lastResult: null,
   resultHistory: [],
 };
 
 export const setInitialTheme = function () {
-  const initialTheme = localStorage.getItem('theme');
+  if (localStorage.getItem('theme')) initialTheme = localStorage.getItem('theme');
+  if (!localStorage.getItem('theme')) initialTheme = 1;
+
   return initialTheme;
 };
 

@@ -4,8 +4,8 @@ import * as viewInitialThemeSelect from './Views/viewInitialThemeSelect';
 import * as viewRenderTheme from './Views/viewRenderTheme';
 import * as viewScreen from './Views/viewScreen';
 
-const controlInitialThemeSelect = function () {
-  const initialTheme = model.setInitialTheme();
+const controlInitialThemeSelect = function (setTheme) {
+  const initialTheme = model.setInitialTheme(setTheme);
   viewRenderTheme.renderTheme(initialTheme);
 };
 
