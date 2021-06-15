@@ -123,3 +123,42 @@
     color: $theme3-deltext;
   }
 }
+
+@mixin num-shadow-color {
+  &.theme1 {
+    box-shadow: $theme1-num-shadow 0px 5px;
+  }
+  &.theme2 {
+    box-shadow: $theme2-num-shadow 0px 5px;
+  }
+
+  &.theme3 {
+    box-shadow: $theme3-num-shadow 0px 5px;
+  }
+}
+
+@mixin del-shadow-color {
+  &.theme1 {
+    box-shadow: $theme1-del-shadow 0px 5px;
+  }
+  &.theme2 {
+    box-shadow: $theme2-del-shadow 0px 5px;
+  }
+
+  &.theme3 {
+    box-shadow: $theme3-del-shadow 0px 5px;
+  }
+}
+
+@mixin equal-shadow-color {
+  &.theme1 {
+    box-shadow: $theme1-equal-shadow 0px 5px;
+  }
+  &.theme2 {
+    box-shadow: $theme2-equal-shadow 0px 5px;
+  }
+
+  &.theme3 {
+    box-shadow: $theme3-equal-shadow 0px 5px;
+  }
+}
