@@ -1,0 +1,12 @@
+.screen {
+  grid-column: 1/5;
+  margin-top: 3rem;
+  border-radius: 2rem;
+  @include screen-background;
+
+  &__result {
+    text-align: right;
+    padding: 3rem;
+    font-size: 4rem;
+  }
+}

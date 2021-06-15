@@ -39,3 +39,87 @@
     background-color: $theme3-equal-background;
   }
 }
+
+@mixin del-background {
+  &.theme1 {
+    background-color: $theme1-del-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-del-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-del-background;
+  }
+}
+
+@mixin key-background-color {
+  &.theme1 {
+    background-color: $theme1-equal-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-equal-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-equal-background;
+  }
+}
+
+@mixin key-background-color {
+  &.theme1 {
+    background-color: $theme1-num-background;
+  }
+
+  &.theme2 {
+    background-color: $theme2-num-background;
+  }
+
+  &.theme3 {
+    background-color: $theme3-num-background;
+  }
+}
+
+@mixin key-font-color {
+  &.theme1 {
+    color: $theme1-keytext;
+  }
+
+  &.theme2 {
+    color: $theme2-keytext;
+  }
+
+  &.theme3 {
+    color: $theme3-gentext;
+  }
+}
+
+@mixin del-font-color {
+  &.theme1 {
+    color: $theme1-gentext;
+  }
+
+  &.theme2 {
+    color: $theme2-gentext;
+  }
+
+  &.theme3 {
+    color: $theme3-gentext;
+  }
+}
+
+@mixin equal-font-color {
+  &.theme1 {
+    color: $theme1-gentext;
+  }
+
+  &.theme2 {
+    color: $theme2-keytext;
+  }
+
+  &.theme3 {
+    color: $theme3-deltext;
+  }
+}
