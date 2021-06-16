@@ -23,41 +23,39 @@ export const setOperand = function (operand) {
   } else {
     state.displayValue = displayValue === '0' ? operand : displayValue + operand;
   }
-  console.log(state);
 };
 
 export const setOperator = function (operation) {
-  console.log(operation);
   const { firstOperand, displayValue, operator } = state;
   const inputValue = displayValue;
 
   if (operator && state.waitingForSecondOperand) {
     state.operator = operation;
+    console.log(state);
     return;
   }
+
   if (firstOperand === null && !isNaN(inputValue)) {
-    state.firstOperand = inputValue;
-  } else if (operation) {
-    const calculation = calculate(firstOperand, inputValue, operation);
-    state.displayValue = calculation;
+    state.firstOperand = parseFloat(inputValue);
+  } else if (operator) {
+    const calculation = calculate(firstOperand, inputValue, operator);
+    state.displayValue = parseFloat(calculation);
     state.firstOperand = calculation;
   }
+
   state.waitingForSecondOperand = true;
   state.operator = operation;
-  console.log(state);
 };
 
 const calculate = function (firstOperand, secondOperand, operator) {
-  console.log(firstOperand, secondOperand, operator);
   if (operator === 'plus') {
-    return firstOperand + secondOperand;
+    return parseFloat(firstOperand) + parseFloat(secondOperand);
   } else if (operator === 'minus') {
-    return firstOperand - secondOperand;
+    return parseFloat(firstOperand) - parseFloat(secondOperand);
   } else if (operator === 'times') {
-    return firstOperand * secondOperand;
+    return parseFloat(firstOperand) * parseFloat(secondOperand);
   } else if (operator === 'divide') {
-    return firstOperand / secondOperand;
+    return parseFloat(firstOperand) / parseFloat(secondOperand);
   }
-
-  // return secondOperand;
+  return secondOperand;
 };
