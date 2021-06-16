@@ -15,31 +15,40 @@ export const setTheme = function (theme) {
   localStorage.setItem('theme', theme);
 };
 
-export const setOperation = function (operand, operation) {
-  console.log(operand, operation);
-  const { displayValue, firstOperand, operator } = state;
-  const inputValue = parseFloat(operand);
+export const setOperand = function (operand) {
+  const { displayValue, waitingForSecondOperand } = state;
+  if (waitingForSecondOperand === true) {
+    state.displayValue = operand;
+    state.waitingForSecondOperand = false;
+  } else {
+    state.displayValue = displayValue === '0' ? operand : displayValue + operand;
+  }
+  console.log(state);
+};
+
+export const setOperator = function (operation) {
+  console.log(operation);
+  const { firstOperand, displayValue, operator } = state;
+  const inputValue = displayValue;
 
   if (operator && state.waitingForSecondOperand) {
     state.operator = operation;
-    console.log('zaaart');
     return;
   }
-
   if (firstOperand === null && !isNaN(inputValue)) {
-    state.displayValue = inputValue;
-  } else if (operator) {
-    const calculation = calculate(firstOperand, inputValue, operator);
-    state.displayValue = String(result);
+    state.firstOperand = inputValue;
+  } else if (operation) {
+    const calculation = calculate(firstOperand, inputValue, operation);
+    state.displayValue = calculation;
     state.firstOperand = calculation;
   }
-
   state.waitingForSecondOperand = true;
-  state.operation = operation;
+  state.operator = operation;
   console.log(state);
 };
 
 const calculate = function (firstOperand, secondOperand, operator) {
+  console.log(firstOperand, secondOperand, operator);
   if (operator === 'plus') {
     return firstOperand + secondOperand;
   } else if (operator === 'minus') {
@@ -50,5 +59,5 @@ const calculate = function (firstOperand, secondOperand, operator) {
     return firstOperand / secondOperand;
   }
 
-  return secondOperand;
+  // return secondOperand;
 };

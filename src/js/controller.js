@@ -1,9 +1,11 @@
-import * as model from './model.js';
+import * as model from './model';
 import * as viewSetTheme from './Views/viewSetTheme';
 import * as viewInitialThemeSelect from './Views/viewInitialThemeSelect';
 import * as viewRenderTheme from './Views/viewRenderTheme';
 import * as updateDisplay from './Views/viewDisplay';
-import * as viewAddHandlerKeyPress from './Views/viewAddHandlerKeyPress';
+import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand';
+import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation';
+import { update } from 'lodash';
 
 const controlInitialThemeSelect = function (theme) {
   const initialTheme = model.setInitialTheme();
@@ -19,8 +21,13 @@ const controlUpdateDisplay = function () {
   updateDisplay.updateDisplay(model.state.displayValue);
 };
 
-const controlOperation = function (operand, operation) {
-  model.setOperation(operand, operation);
+const controlOperand = function (operand) {
+  model.setOperand(operand);
+  updateDisplay.updateDisplay(model.state.displayValue);
+};
+
+const controlOperation = function (operator) {
+  model.setOperator(operator);
   updateDisplay.updateDisplay(model.state.displayValue);
 };
 
@@ -28,6 +35,7 @@ const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
   controlUpdateDisplay();
-  viewAddHandlerKeyPress.handlerKeyPress(controlOperation);
+  viewAddHandlerOperand.handlerNums(controlOperand);
+  viewAddHandlerOperation.handlerOperation(controlOperation);
 };
 init();
