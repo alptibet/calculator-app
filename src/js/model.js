@@ -1,9 +1,8 @@
 export const state = {
+  displayValue: '0',
   firstOperand: null,
-  displayValue: 0,
-  lastResult: 0,
-  waitingOperand: false,
-  operator: '',
+  waitingForSecondOperand: false,
+  operator: null,
 };
 
 export const setInitialTheme = function () {

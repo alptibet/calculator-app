@@ -17,5 +17,4 @@ const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
 };
-
 init();
