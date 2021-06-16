@@ -1,4 +1,4 @@
-const state = {
+export const state = {
   firstOperand: null,
   secondOperand: null,
   displayValue: 0,
@@ -23,9 +23,8 @@ export const setOperands = function (operand) {
     state.firstOperand = operand;
   } else {
     state.secondOperand = operand;
-    doMath();
+    // doMath();
   }
-
   console.log(state);
 };
 
@@ -35,7 +34,6 @@ export const setOperation = function (operation) {
 };
 
 const doMath = function () {
-  console.log(`Doint math with ${state.firstOperand} and ${state.secondOperand}`);
   if (state.operation === 'plus') {
     state.lastResult = state.firstOperand + state.secondOperand;
     state.firstOperand = state.lastResult;

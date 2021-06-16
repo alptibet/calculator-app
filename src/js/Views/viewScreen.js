@@ -22,7 +22,6 @@ export const addHandlerOperation = function (handler) {
     operation.addEventListener('click', function (e) {
       const { target } = e;
       handler(target.classList[0]);
-      clearScreen();
       operand = '';
     });
   });
@@ -33,5 +32,6 @@ const clearScreen = function () {
 };
 
 export const renderScreen = function (displayValue = 0) {
+  console.log(displayValue);
   calcScreen.textContent = displayValue;
 };

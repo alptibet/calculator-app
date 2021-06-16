@@ -20,6 +20,7 @@ const controlOperands = function (operand) {
 
 const controlOperation = function (operation) {
   model.setOperation(operation);
+  viewScreen.renderScreen(model.state.displayValue);
 };
 
 const init = function () {
