@@ -1,27 +1,30 @@
 const calcScreen = document.querySelector('.screen__result');
 let operand = '';
 
-export const addHandlerUpdateScreen = function () {
+export const addHandlerUpdateScreen = function (handler) {
   const nums = document.querySelectorAll('.operand');
   renderScreen();
   nums.forEach(function (num) {
     num.addEventListener('click', function (e) {
       const { target } = e;
       operand += target.textContent;
-      console.log(operand);
       renderScreen(operand);
+      handler(+operand);
     });
   });
 };
 
-//ADDITION
-export const addHandlerAddition = function (handler) {
-  const plus = document.querySelector('.plus');
-  plus.addEventListener('click', function (e) {
-    const operand1 = +calcScreen.textContent;
-    handler(operand1);
-    clearScreen();
-    operand = '';
+//HANDLE OPERATION
+
+export const addHandlerOperation = function (handler) {
+  const operations = document.querySelectorAll('.operator');
+  operations.forEach(function (operation) {
+    operation.addEventListener('click', function (e) {
+      const { target } = e;
+      handler(target.classList[0]);
+      clearScreen();
+      operand = '';
+    });
   });
 };
 
@@ -29,7 +32,6 @@ const clearScreen = function () {
   calcScreen.textContent = '';
 };
 
-const renderScreen = function (displayValue = 0) {
-  console.log(displayValue);
+export const renderScreen = function (displayValue = 0) {
   calcScreen.textContent = displayValue;
 };

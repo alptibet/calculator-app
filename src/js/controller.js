@@ -14,15 +14,19 @@ const controlThemeSelect = function (theme) {
   viewRenderTheme.renderTheme(theme);
 };
 
-const controlAddition = function (operand) {
-  model.operationAddition(operand);
+const controlOperands = function (operand) {
+  model.setOperands(operand);
+};
+
+const controlOperation = function (operation) {
+  model.setOperation(operation);
 };
 
 const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
-  viewScreen.addHandlerUpdateScreen();
-  viewScreen.addHandlerAddition(controlAddition);
+  viewScreen.addHandlerUpdateScreen(controlOperands);
+  viewScreen.addHandlerOperation(controlOperation);
 };
 
 init();

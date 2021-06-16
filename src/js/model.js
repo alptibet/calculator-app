@@ -5,6 +5,7 @@ const state = {
   lastResult: null,
   resultHistory: [],
   waitingSecondOperand: false,
+  operation: '',
 };
 
 export const setInitialTheme = function () {
@@ -17,13 +18,42 @@ export const setTheme = function (theme) {
   localStorage.setItem('theme', theme);
 };
 
-export const operationAddition = function (operand) {
-  state.firstOperand = operand;
-  state.waitingSecondOperand = true;
-  console.log(operand);
+export const setOperands = function (operand) {
+  if (!state.waitingSecondOperand) {
+    state.firstOperand = operand;
+  } else {
+    state.secondOperand = operand;
+    doMath();
+  }
+
   console.log(state);
 };
 
-// export const calculateAddition = function (num1, num2) {
-//   return num1 + num2;
-// };
+export const setOperation = function (operation) {
+  state.operation = operation;
+  state.waitingSecondOperand = true;
+};
+
+const doMath = function () {
+  console.log(`Doint math with ${state.firstOperand} and ${state.secondOperand}`);
+  if (state.operation === 'plus') {
+    state.lastResult = state.firstOperand + state.secondOperand;
+    state.firstOperand = state.lastResult;
+    state.displayValue = state.lastResult;
+  }
+  if (state.operation === 'minus') {
+    state.lastResult = state.firstOperand - state.secondOperand;
+    state.firstOperand = state.lastResult;
+    state.displayValue = state.lastResult;
+  }
+  if (state.operation === 'times') {
+    state.lastResult = state.firstOperand * state.secondOperand;
+    state.firstOperand = state.lastResult;
+    state.displayValue = state.lastResult;
+  }
+  if (state.operation === 'divide') {
+    state.lastResult = state.firstOperand / state.secondOperand;
+    state.firstOperand = state.lastResult;
+    state.displayValue = state.lastResult;
+  }
+};
