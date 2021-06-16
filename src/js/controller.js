@@ -2,7 +2,6 @@ import * as model from './model.js';
 import * as viewSetTheme from './Views/viewSetTheme';
 import * as viewInitialThemeSelect from './Views/viewInitialThemeSelect';
 import * as viewRenderTheme from './Views/viewRenderTheme';
-import * as viewScreen from './Views/viewScreen';
 
 const controlInitialThemeSelect = function (theme) {
   const initialTheme = model.setInitialTheme();
@@ -14,20 +13,9 @@ const controlThemeSelect = function (theme) {
   viewRenderTheme.renderTheme(theme);
 };
 
-const controlOperands = function (operand) {
-  model.setOperands(operand);
-};
-
-const controlOperation = function (operation) {
-  model.setOperation(operation);
-  viewScreen.renderScreen(model.state.displayValue);
-};
-
 const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
-  viewScreen.addHandlerUpdateScreen(controlOperands);
-  viewScreen.addHandlerOperation(controlOperation);
 };
 
 init();
