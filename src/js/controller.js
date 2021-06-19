@@ -6,6 +6,7 @@ import * as updateDisplay from './Views/viewDisplay';
 import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand';
 import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation';
 import * as viewDelete from './Views/viewDelete';
+import * as viewReset from './Views/viewReset';
 
 const controlInitialThemeSelect = function (theme) {
   const initialTheme = model.setInitialTheme();
@@ -36,6 +37,11 @@ const controlDelete = function (operand) {
   updateDisplay.updateDisplay(model.state.displayValue);
 };
 
+const controlReset = function () {
+  model.resetCalculator();
+  updateDisplay.updateDisplay(model.state.disp);
+};
+
 const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
@@ -43,5 +49,6 @@ const init = function () {
   viewAddHandlerOperand.handlerNums(controlOperand);
   viewAddHandlerOperation.handlerOperation(controlOperation);
   viewDelete.addHandlerDelete(controlDelete);
+  viewReset.addHandlerReset(controlReset);
 };
 init();
