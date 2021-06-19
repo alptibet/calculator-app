@@ -35,7 +35,6 @@ export const setOperator = function (operation) {
 
   if (operator && state.waitingForSecondOperand) {
     state.operator = operation;
-    console.log(state);
     return;
   }
 
