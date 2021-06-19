@@ -5,7 +5,7 @@ import * as viewRenderTheme from './Views/viewRenderTheme';
 import * as updateDisplay from './Views/viewDisplay';
 import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand';
 import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation';
-import { update } from 'lodash';
+import * as viewDelete from './Views/viewDelete';
 
 const controlInitialThemeSelect = function (theme) {
   const initialTheme = model.setInitialTheme();
@@ -31,11 +31,17 @@ const controlOperation = function (operator) {
   updateDisplay.updateDisplay(model.state.displayValue);
 };
 
+const controlDelete = function (operand) {
+  model.deleteOperand(operand);
+  updateDisplay.updateDisplay(model.state.displayValue);
+};
+
 const init = function () {
   viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
   controlUpdateDisplay();
   viewAddHandlerOperand.handlerNums(controlOperand);
   viewAddHandlerOperation.handlerOperation(controlOperation);
+  viewDelete.addHandlerDelete(controlDelete);
 };
 init();

@@ -25,6 +25,10 @@ export const setOperand = function (operand) {
   }
 };
 
+export const deleteOperand = function (operand) {
+  state.displayValue = operand;
+};
+
 export const setOperator = function (operation) {
   const { firstOperand, displayValue, operator } = state;
   const inputValue = displayValue;
