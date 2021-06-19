@@ -39,7 +39,7 @@ const controlDelete = function (operand) {
 
 const controlReset = function () {
   model.resetCalculator();
-  updateDisplay.updateDisplay(model.state.disp);
+  updateDisplay.updateDisplay(model.state.displayValue);
 };
 
 const init = function () {

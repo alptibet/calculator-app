@@ -63,6 +63,9 @@ const calculate = function (firstOperand, secondOperand, operator) {
   return secondOperand;
 };
 
-const reset = function () {
-  (state.displayValue = '0'), (state.firstOperand = null), (state.waitingForSecondOperand = false), (state.operator = null);
+export const resetCalculator = function () {
+  state.displayValue = '0';
+  state.waitingForSecondOperand = false;
+  state.operator = null;
+  state.firstOperand = null;
 };
