@@ -6,10 +6,12 @@
   padding: 0;
   box-sizing: inherit;
 }
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
+
 body {
   margin: 0 auto;
   width: 100vw;
@@ -26,6 +28,7 @@ body.theme2 {
 body.theme3 {
   background-color: #160628;
 }
+
 .container {
   position: absolute;
   top: 50%;
@@ -41,6 +44,7 @@ body.theme3 {
     width: 35rem;
   }
 }
+
 body {
   font-family: "Spartan", sans-serif;
   font-size: 3.2rem;
@@ -54,6 +58,7 @@ body.theme2 {
 body.theme3 {
   color: #ffe53d;
 }
+
 .numpad button {
   font-family: "Spartan", sans-serif;
   font-size: 3.2rem;
@@ -127,10 +132,12 @@ body.theme3 {
     font-size: 1.6rem;
   }
 }
+
 .logo {
   grid-column: 1/4;
   align-self: end;
 }
+
 .theme-selector {
   align-self: end;
   grid-column: 4/5;
@@ -232,6 +239,7 @@ body.theme3 {
 .theme-selector__toggle input:nth-child(3):checked ~ .slide-bg {
   left: 41px;
 }
+
 .screen {
   height: 10rem;
   grid-column: 1/5;
@@ -263,6 +271,7 @@ body.theme3 {
     padding: 2.4rem;
   }
 }
+
 .numpad {
   grid-column: 1/5;
   display: grid;
@@ -384,4 +393,3 @@ body.theme3 {
 .numpad__equals.theme3 {
   box-shadow: #6cf9f2 0px 5px;
 }
-/*# sourceMappingURL=index.b7ddd90b.css.map */

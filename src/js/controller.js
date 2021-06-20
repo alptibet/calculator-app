@@ -1,11 +1,11 @@
-import * as model from './model';
-import * as viewSetTheme from './Views/viewSetTheme';
-import * as viewRenderTheme from './Views/viewRenderTheme';
-import * as updateDisplay from './Views/viewDisplay';
-import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand';
-import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation';
-import * as viewDelete from './Views/viewDelete';
-import * as viewReset from './Views/viewReset';
+import * as model from './model.js';
+import * as viewSetTheme from './Views/viewSetTheme.js';
+import * as viewRenderTheme from './Views/viewRenderTheme.js';
+import * as updateDisplay from './Views/viewDisplay.js';
+import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand.js';
+import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation.js';
+import * as viewDelete from './Views/viewDelete.js';
+import * as viewReset from './Views/viewReset.js';
 
 const controlInitialThemeSelect = function () {
   const initialTheme = model.setInitialTheme();

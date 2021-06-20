@@ -7,11 +7,11 @@ export const state = {
 
 export const setInitialTheme = function () {
   if (localStorage.getItem('theme')) {
-    initialTheme = localStorage.getItem('theme');
+    const initialTheme = localStorage.getItem('theme');
+    return initialTheme;
   } else {
-    initialTheme = 1;
+    return 1;
   }
-  return initialTheme;
 };
 
 export const setTheme = function (theme) {
