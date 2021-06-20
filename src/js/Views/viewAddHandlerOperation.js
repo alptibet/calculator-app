@@ -5,7 +5,7 @@ export const handlerOperation = function (handler) {
     if (!target.matches('button')) return;
 
     if (target.classList.contains('operator')) {
-      operation = target.classList[0];
+      const operation = target.classList[0];
       handler(operation);
     }
   });
