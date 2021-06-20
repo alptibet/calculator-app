@@ -453,7 +453,7 @@ const state = {
 };
 const setInitialTheme = function() {
     if (localStorage.getItem('theme')) initialTheme = localStorage.getItem('theme');
-    if (!localStorage.getItem('theme')) initialTheme = 1;
+    else initialTheme = 1;
     return initialTheme;
 };
 const setTheme = function(theme) {

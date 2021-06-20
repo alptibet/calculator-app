@@ -11,7 +11,6 @@ export const setInitialTheme = function () {
   } else {
     initialTheme = 1;
   }
-  console.log(`theme is ${initialTheme}`);
   return initialTheme;
 };
 
