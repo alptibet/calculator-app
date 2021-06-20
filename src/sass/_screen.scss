@@ -5,6 +5,7 @@
   @include screen-background;
 
   @include respond(phone) {
+    margin-top: 2rem;
   }
 
   &__result {
@@ -14,6 +15,7 @@
 
     @include respond(phone) {
       font-size: 3.6rem;
+      padding: 2.4rem;
     }
   }
 }
