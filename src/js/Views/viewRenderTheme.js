@@ -9,7 +9,6 @@ export const renderTheme = function (theme) {
   });
 
   const allItems = [body, ...children];
-  allItems.classList.add('theme1');
   allItems.forEach(function (item) {
     item.classList.remove('theme1', 'theme2', 'theme3');
     item.classList.toggle(`theme${theme}`);
