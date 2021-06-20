@@ -1,11 +1,9 @@
 export const renderTheme = function (theme) {
-  const zart = theme;
   const body = document.querySelector('body');
   const children = body.querySelectorAll('*');
   const themeSelector = document.querySelectorAll('.theme-selector__toggle input');
   themeSelector.forEach(function (item) {
-    if (item.dataset.theme === zart) {
-      console.log(zart);
+    if (item.dataset.theme === theme) {
       item.checked = true;
     }
   });
