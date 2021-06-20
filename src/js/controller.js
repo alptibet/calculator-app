@@ -8,7 +8,7 @@ import * as viewAddHandlerOperation from './Views/viewAddHandlerOperation';
 import * as viewDelete from './Views/viewDelete';
 import * as viewReset from './Views/viewReset';
 
-const controlInitialThemeSelect = function (theme) {
+const controlInitialThemeSelect = function () {
   const initialTheme = model.setInitialTheme();
   viewRenderTheme.renderTheme(initialTheme);
 };
@@ -43,7 +43,7 @@ const controlReset = function () {
 };
 
 const init = function () {
-  viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
+  controlInitialThemeSelect();
   viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
   controlUpdateDisplay();
   viewAddHandlerOperand.handlerNums(controlOperand);
@@ -51,4 +51,5 @@ const init = function () {
   viewDelete.addHandlerDelete(controlDelete);
   viewReset.addHandlerReset(controlReset);
 };
+
 init();

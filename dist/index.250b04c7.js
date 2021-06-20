@@ -555,7 +555,7 @@ parcelHelpers.export(exports, "initialThemeSelect", ()=>initialThemeSelect
 );
 const initialThemeSelect = function(handler) {
     const themeSelector = document.querySelectorAll('.theme-selector__toggle input');
-    handler(themeSelector);
+    handler();
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"1oqW7":[function(require,module,exports) {
