@@ -383,14 +383,13 @@ function hmrAcceptRun(bundle/*: ParcelRequire */ , id/*: string */ ) {
 },{}],"3miIZ":[function(require,module,exports) {
 var _model = require("./model");
 var _viewSetTheme = require("./Views/viewSetTheme");
-var _viewInitialThemeSelect = require("./Views/viewInitialThemeSelect");
 var _viewRenderTheme = require("./Views/viewRenderTheme");
 var _viewDisplay = require("./Views/viewDisplay");
 var _viewAddHandlerOperand = require("./Views/viewAddHandlerOperand");
 var _viewAddHandlerOperation = require("./Views/viewAddHandlerOperation");
 var _viewDelete = require("./Views/viewDelete");
 var _viewReset = require("./Views/viewReset");
-const controlInitialThemeSelect = function(theme) {
+const controlInitialThemeSelect = function() {
     const initialTheme = _model.setInitialTheme();
     _viewRenderTheme.renderTheme(initialTheme);
 };
@@ -418,7 +417,7 @@ const controlReset = function() {
     _viewDisplay.updateDisplay(_model.state.displayValue);
 };
 const init = function() {
-    _viewInitialThemeSelect.initialThemeSelect(controlInitialThemeSelect);
+    controlInitialThemeSelect();
     _viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
     controlUpdateDisplay();
     _viewAddHandlerOperand.handlerNums(controlOperand);
@@ -428,7 +427,7 @@ const init = function() {
 };
 init();
 
-},{"./model":"1hp6y","./Views/viewSetTheme":"2fyjX","./Views/viewInitialThemeSelect":"4TYGj","./Views/viewRenderTheme":"1oqW7","./Views/viewDisplay":"22PbF","./Views/viewAddHandlerOperand":"7gBkX","./Views/viewAddHandlerOperation":"4eWCJ","./Views/viewDelete":"2wmbt","./Views/viewReset":"3oOLh"}],"1hp6y":[function(require,module,exports) {
+},{"./model":"1hp6y","./Views/viewSetTheme":"2fyjX","./Views/viewRenderTheme":"1oqW7","./Views/viewDisplay":"22PbF","./Views/viewAddHandlerOperand":"7gBkX","./Views/viewAddHandlerOperation":"4eWCJ","./Views/viewDelete":"2wmbt","./Views/viewReset":"3oOLh"}],"1hp6y":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state
@@ -546,16 +545,6 @@ const addHandlerThemeSelect = function(handler) {
         if (e.target.type !== 'radio') return;
         handler(e.target.dataset.theme);
     });
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"4TYGj":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initialThemeSelect", ()=>initialThemeSelect
-);
-const initialThemeSelect = function(handler) {
-    const themeSelector = document.querySelectorAll('.theme-selector__toggle input');
-    handler();
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"367CR"}],"1oqW7":[function(require,module,exports) {

@@ -1,6 +1,5 @@
 import * as model from './model';
 import * as viewSetTheme from './Views/viewSetTheme';
-import * as viewInitialThemeSelect from './Views/viewInitialThemeSelect';
 import * as viewRenderTheme from './Views/viewRenderTheme';
 import * as updateDisplay from './Views/viewDisplay';
 import * as viewAddHandlerOperand from './Views/viewAddHandlerOperand';
