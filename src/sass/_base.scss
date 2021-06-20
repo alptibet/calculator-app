@@ -29,4 +29,8 @@ body {
   width: 55rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+
+  @include respond(phone) {
+    width: 35rem;
+  }
 }

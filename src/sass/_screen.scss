@@ -1,13 +1,19 @@
 .screen {
-  height: 10rem;
   grid-column: 1/5;
   margin-top: 3rem;
   border-radius: 2rem;
   @include screen-background;
 
+  @include respond(phone) {
+  }
+
   &__result {
     text-align: right;
     padding: 3rem;
     font-size: 4rem;
+
+    @include respond(phone) {
+      font-size: 3.6rem;
+    }
   }
 }

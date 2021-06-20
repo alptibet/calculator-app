@@ -9,6 +9,11 @@
   justify-content: center;
   @include screen-background;
 
+  @include respond(phone) {
+    grid-template-columns: repeat(4, minmax(2rem, 1fr));
+    gap: 2rem;
+  }
+
   & button {
     font-weight: 700;
     cursor: pointer;
@@ -20,6 +25,11 @@
 
     &:active {
       transform: translateY(2px);
+    }
+
+    @include respond(phone) {
+      font-size: 2.2rem;
+      padding-bottom: 1rem;
     }
   }
 

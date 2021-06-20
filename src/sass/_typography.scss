@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
 
-body,
-n {
+body {
   font-family: 'Spartan', sans-serif;
   font-size: 3.2rem;
   &.theme1 {
@@ -22,20 +21,38 @@ n {
   font-size: 3.2rem;
   @include key-font-color;
 
+  @include respond(phone) {
+    font-size: 2.2rem;
+  }
+
   &.numpad__del {
     font-size: 2rem;
     @include del-font-color;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
   }
+
   &.numpad__reset {
     font-size: 2rem;
     @include del-font-color;
     padding-top: 2.7rem;
     padding-bottom: 2rem;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
   }
+
   &.numpad__equals {
     font-size: 2rem;
     @include equal-font-color;
     padding-top: 2.7rem;
     padding-bottom: 2rem;
+
+    @include respond(phone) {
+      font-size: 1.6rem;
+    }
   }
 }

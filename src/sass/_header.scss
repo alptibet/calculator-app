@@ -9,6 +9,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
+  & > p {
+    @include respond(phone) {
+      margin-right: 1rem;
+    }
+  }
+
   & p {
     text-transform: uppercase;
     font-size: 1rem;
