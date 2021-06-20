@@ -5,6 +5,7 @@ export const renderTheme = function (theme) {
   themeSelector.forEach(function (item) {
     if (item.dataset.theme === theme) {
       item.checked = true;
+      console.log(item);
     }
   });
 
