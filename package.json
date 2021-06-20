@@ -4,8 +4,8 @@
   "description": "Calculator",
   "main": "index.html",
   "scripts": {
-    "start": "parcel serve index.html --no-cache",
-    "build": " parcel build --no-cache index.html --dist-dir ./dist"
+    "start": "parcel serve index.html",
+    "build": " parcel build index.html --dist-dir ./dist"
   },
   "author": "",
   "license": "ISC",
