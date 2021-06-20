@@ -8,6 +8,7 @@ export const state = {
 export const setInitialTheme = function () {
   if (localStorage.getItem('theme')) initialTheme = localStorage.getItem('theme');
   if (!localStorage.getItem('theme')) initialTheme = 1;
+  console.log(initialTheme);
   return initialTheme;
 };
 
