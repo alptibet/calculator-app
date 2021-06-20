@@ -419,7 +419,7 @@ const controlReset = function() {
 const init = function() {
     controlInitialThemeSelect();
     controlUpdateDisplay();
-    _viewRenderTheme.viewRenderTheme(1);
+    _viewRenderTheme.renderTheme(1);
     _viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
     _viewAddHandlerOperand.handlerNums(controlOperand);
     _viewAddHandlerOperation.handlerOperation(controlOperation);
@@ -554,6 +554,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "renderTheme", ()=>renderTheme
 );
 const renderTheme = function(theme) {
+    console.log(theme);
     const body = document.querySelector('body');
     const children = body.querySelectorAll('*');
     const themeSelector = document.querySelectorAll('.theme-selector__toggle input');

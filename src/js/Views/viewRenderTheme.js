@@ -1,4 +1,5 @@
 export const renderTheme = function (theme) {
+  console.log(theme);
   const body = document.querySelector('body');
   const children = body.querySelectorAll('*');
   const themeSelector = document.querySelectorAll('.theme-selector__toggle input');
