@@ -9,6 +9,7 @@ import * as viewReset from './Views/viewReset.js';
 
 const controlInitialThemeSelect = function () {
   const initialTheme = model.setInitialTheme();
+  model.setTheme(initialTheme);
   viewRenderTheme.renderTheme(initialTheme);
 };
 
