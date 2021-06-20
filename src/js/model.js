@@ -42,6 +42,10 @@ export const setOperator = function (operation) {
     state.firstOperand = parseFloat(inputValue);
   } else if (operator) {
     const calculation = calculate(firstOperand, inputValue, operator);
+    if (!isFinite(calculation)) {
+      resetCalculator();
+      return;
+    }
     state.displayValue = parseFloat(calculation);
     state.firstOperand = calculation;
   }
