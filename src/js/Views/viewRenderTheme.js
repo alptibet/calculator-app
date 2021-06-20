@@ -13,4 +13,6 @@ export const renderTheme = function (theme) {
     item.classList.remove('theme1', 'theme2', 'theme3');
     item.classList.toggle(`theme${theme}`);
   });
+
+  console.log(theme);
 };
