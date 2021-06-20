@@ -418,8 +418,9 @@ const controlReset = function() {
 };
 const init = function() {
     controlInitialThemeSelect();
-    _viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
     controlUpdateDisplay();
+    _viewRenderTheme.viewRenderTheme(1);
+    _viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
     _viewAddHandlerOperand.handlerNums(controlOperand);
     _viewAddHandlerOperation.handlerOperation(controlOperation);
     _viewDelete.addHandlerDelete(controlDelete);

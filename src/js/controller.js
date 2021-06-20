@@ -43,8 +43,9 @@ const controlReset = function () {
 
 const init = function () {
   controlInitialThemeSelect();
-  viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
   controlUpdateDisplay();
+  viewRenderTheme.viewRenderTheme(1);
+  viewSetTheme.addHandlerThemeSelect(controlThemeSelect);
   viewAddHandlerOperand.handlerNums(controlOperand);
   viewAddHandlerOperation.handlerOperation(controlOperation);
   viewDelete.addHandlerDelete(controlDelete);
